@@ -7,8 +7,23 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { background-color: #f4f6f9; color: #333; }
-        header { background: #1a202c; color: white; padding: 15px 20px; text-align: center; font-size: 22px; font-weight: bold; }
-        .logo { color: #3182ce; }
+        
+        /* Header & Logo Alignment */
+        header { 
+            background: #1a202c; 
+            padding: 12px 20px; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .brand-logo { 
+            height: 70px; 
+            max-width: 220px; 
+            object-fit: contain; 
+            border-radius: 8px;
+        }
+
         .hero { background: linear-gradient(135deg, #2b6cb0, #1a202c); color: white; text-align: center; padding: 30px 20px; }
         .hero h1 { font-size: 24px; margin-bottom: 8px; }
         .hero p { font-size: 14px; opacity: 0.9; }
@@ -25,8 +40,9 @@
 </head>
 <body>
 
+    <!-- Header Section with Uploaded Brand Logo -->
     <header>
-        <span class="logo">Makkal Mobile Hub</span>
+        <img src="IMG-20260906-WA0002(1).jpg" alt="Makkal Mobile Hub Logo" class="brand-logo">
     </header>
 
     <section class="hero">
@@ -65,7 +81,7 @@
                 <select id="item">
                     <option value="Anti-Yellow Clear Backcase (₹149)">Anti-Yellow Clear Backcase - ₹149</option>
                     <option value="Magnetic Matte Case (₹249)">Magnetic Matte Case - ₹249</option>
-                    <option value="Privacy Screen Guard (₹199)">11D Privacy Screen Guard - ₹199</option>
+                    <option value="11D Privacy Screen Guard (₹199)">11D Privacy Screen Guard - ₹199</option>
                     <option value="OG Super Hard Tempered Glass (₹99)">OG Super Hard Tempered Glass - ₹99</option>
                     <option value="3D Transparent Backskin (₹129)">3D Transparent Backskin - ₹129</option>
                     <option value="Clear Matte Protection Backskin (₹119)">Clear Matte Protection Backskin - ₹119</option>
@@ -96,7 +112,6 @@
                           "• Model: " + model + "%0A" +
                           "• Item: " + item;
 
-            // Direct WhatsApp Redirect
             var whatsappUrl = "https://wa.me/?text=" + message;
             window.open(whatsappUrl, '_blank');
         }
