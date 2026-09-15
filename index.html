@@ -18,19 +18,38 @@
         }
         .brand-logo { height: 65px; max-width: 200px; object-fit: contain; }
 
-        .hero { background: linear-gradient(135deg, #2b6cb0, #1a202c); color: white; text-align: center; padding: 25px 15px; }
+        .hero { background: linear-gradient(135deg, #2b6cb0, #1a202c); color: white; text-align: center; padding: 20px 15px; }
         .hero h1 { font-size: 22px; margin-bottom: 5px; }
         .hero p { font-size: 13px; opacity: 0.9; }
 
         .container { padding: 15px; max-width: 1000px; margin: 0 auto; }
+
+        /* Combo Offer Card Styling */
+        .combo-card {
+            background: linear-gradient(135deg, #fff3bf, #ffd43b);
+            border: 2px dashed #e67e22;
+            border-radius: 12px;
+            padding: 18px;
+            text-align: center;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(230, 126, 34, 0.2);
+        }
+        .combo-badge { background: #e74c3c; color: white; font-size: 11px; font-weight: bold; padding: 4px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px; display: inline-block; margin-bottom: 8px; }
+        .combo-title { font-size: 20px; font-weight: 800; color: #c0392b; margin-bottom: 8px; }
+        .combo-items { font-size: 13px; font-weight: 600; color: #2c3e50; margin-bottom: 12px; line-height: 1.5; }
+        .combo-price { font-size: 18px; font-weight: bold; color: #27ae60; margin-bottom: 12px; }
+        .combo-price del { color: #888; font-size: 14px; margin-right: 6px; }
+
         .section-title { font-size: 18px; font-weight: bold; margin: 25px 0 10px; color: #1a202c; border-left: 4px solid #3182ce; padding-left: 8px; }
 
         .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
         .product-card { background: white; border-radius: 10px; padding: 12px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.06); display: flex; flex-direction: column; justify-content: space-between; }
+        .product-card img { width: 100%; height: 120px; object-fit: cover; border-radius: 6px; margin-bottom: 8px; }
         .product-card h3 { font-size: 14px; color: #2d3748; margin-bottom: 6px; }
         .product-card .price { color: #2b6cb0; font-weight: bold; font-size: 14px; margin-bottom: 10px; }
 
-        .buy-btn { background: #25d366; color: white; border: none; padding: 8px 0; border-radius: 6px; font-weight: bold; font-size: 13px; cursor: pointer; width: 100%; text-decoration: none; display: block; }
+        .buy-btn { background: #25d366; color: white; border: none; padding: 10px 0; border-radius: 6px; font-weight: bold; font-size: 13px; cursor: pointer; width: 100%; text-decoration: none; display: block; }
+        .combo-btn { background: #e67e22; font-size: 15px; padding: 12px 0; }
 
         /* Modal Popup */
         .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); justify-content: center; align-items: center; padding: 15px; z-index: 1000; }
@@ -57,30 +76,51 @@
 
     <div class="container">
 
+        <!-- 🔥 FOLLOWERS COMBO OFFER 🔥 -->
+        <div class="combo-card">
+            <span class="combo-badge">🔥 Followers Special Offer 🔥</span>
+            <div class="combo-title">4-in-1 Super Combo Package</div>
+            <div class="combo-items">
+                • Anti-Yellow Clear Case<br>
+                • Sticky Pod (360° Universal Mount)<br>
+                • Cable Protector<br>
+                • 9D Screen Privacy Guard
+            </div>
+            <div class="combo-price">
+                <del>Rs. 499</del> <strong>Rs. 399 ONLY</strong>
+            </div>
+            <button onclick="openOrderModal('Followers 4-in-1 Combo Offer (Rs.399)')" class="buy-btn combo-btn">📲 Claim Combo Offer on WhatsApp</button>
+        </div>
+
         <!-- Mobile Spares Section -->
         <div class="section-title">🔧 Mobile Spare Parts</div>
         <div class="product-grid">
             <div class="product-card">
+                <img src="https://via.placeholder.com/150?text=Display+Combo" alt="Display Combo">
                 <h3>Folder / Display Combo</h3>
                 <div class="price">Best Price Quote</div>
                 <button onclick="openOrderModal('Folder / Display Combo')" class="buy-btn">Order on WhatsApp</button>
             </div>
             <div class="product-card">
+                <img src="https://via.placeholder.com/150?text=Battery" alt="Mobile Battery">
                 <h3>Original High Capacity Battery</h3>
                 <div class="price">Best Price Quote</div>
                 <button onclick="openOrderModal('Mobile Battery')" class="buy-btn">Order on WhatsApp</button>
             </div>
             <div class="product-card">
+                <img src="https://via.placeholder.com/150?text=CC+Board" alt="CC Board">
                 <h3>Charging CC Board</h3>
                 <div class="price">Best Price Quote</div>
                 <button onclick="openOrderModal('Charging CC Board')" class="buy-btn">Order on WhatsApp</button>
             </div>
             <div class="product-card">
+                <img src="https://via.placeholder.com/150?text=Button+Strip" alt="Button Strip">
                 <h3>Power & Volume Button Strips</h3>
                 <div class="price">Best Price Quote</div>
                 <button onclick="openOrderModal('Power / Volume Button Strip')" class="buy-btn">Order on WhatsApp</button>
             </div>
             <div class="product-card">
+                <img src="https://via.placeholder.com/150?text=Speaker" alt="Speaker">
                 <h3>Earpiece Speaker & Ringer</h3>
                 <div class="price">Best Price Quote</div>
                 <button onclick="openOrderModal('Earpiece Speaker / Ringer')" class="buy-btn">Order on WhatsApp</button>
@@ -91,16 +131,19 @@
         <div class="section-title">📱 Back Cases</div>
         <div class="product-grid">
             <div class="product-card">
+                <img src="https://via.placeholder.com/150?text=Clear+Case" alt="Clear Case">
                 <h3>Anti-Yellow Clear Case</h3>
                 <div class="price">₹149</div>
                 <button onclick="openOrderModal('Anti-Yellow Clear Case (₹149)')" class="buy-btn">Order on WhatsApp</button>
             </div>
             <div class="product-card">
+                <img src="https://via.placeholder.com/150?text=Magnetic+Case" alt="Magnetic Case">
                 <h3>Magnetic Matte Case</h3>
-                <div class="price">₹199</div>
+                <div class="price">₹249</div>
                 <button onclick="openOrderModal('Magnetic Matte Case (₹249)')" class="buy-btn">Order on WhatsApp</button>
             </div>
             <div class="product-card">
+                <img src="https://via.placeholder.com/150?text=Smoked+Matte" alt="Smoked Matte">
                 <h3>Smoked Matte Back Cover</h3>
                 <div class="price">₹199</div>
                 <button onclick="openOrderModal('Smoked Matte Back Cover (₹199)')" class="buy-btn">Order on WhatsApp</button>
@@ -111,16 +154,19 @@
         <div class="section-title">🛡️ Screen Protection & Privacy Guards</div>
         <div class="product-grid">
             <div class="product-card">
+                <img src="https://via.placeholder.com/150?text=Tempered+Glass" alt="Tempered Glass">
                 <h3>OG Super Hard Tempered Glass</h3>
                 <div class="price">₹99</div>
                 <button onclick="openOrderModal('OG Tempered Glass (₹99)')" class="buy-btn">Order on WhatsApp</button>
             </div>
             <div class="product-card">
-                <h3>Anti-Spy Privacy Guard</h3>
+                <img src="https://via.placeholder.com/150?text=Privacy+Guard" alt="Privacy Guard">
+                <h3>11D Anti-Spy Privacy Guard</h3>
                 <div class="price">₹199</div>
                 <button onclick="openOrderModal('11D Privacy Screen Guard (₹199)')" class="buy-btn">Order on WhatsApp</button>
             </div>
             <div class="product-card">
+                <img src="https://via.placeholder.com/150?text=UV+Glass" alt="UV Glass">
                 <h3>UV Curved Tempered Glass</h3>
                 <div class="price">₹299</div>
                 <button onclick="openOrderModal('UV Curved Tempered Glass (₹299)')" class="buy-btn">Order on WhatsApp</button>
@@ -131,11 +177,13 @@
         <div class="section-title">✨ Transparent Backskins</div>
         <div class="product-grid">
             <div class="product-card">
+                <img src="https://via.placeholder.com/150?text=Carbon+Fiber" alt="Carbon Fiber Skin">
                 <h3>3D Carbon Fiber Backskin</h3>
                 <div class="price">₹129</div>
                 <button onclick="openOrderModal('3D Carbon Fiber Backskin (₹129)')" class="buy-btn">Order on WhatsApp</button>
             </div>
             <div class="product-card">
+                <img src="https://via.placeholder.com/150?text=Clear+Matte+Skin" alt="Matte Skin">
                 <h3>Clear Matte Backskin</h3>
                 <div class="price">₹119</div>
                 <button onclick="openOrderModal('Clear Matte Backskin (₹119)')" class="buy-btn">Order on WhatsApp</button>
@@ -201,7 +249,8 @@
                           "• Brand: " + brand + "%0A" +
                           "• Model: " + model;
 
-            var whatsappUrl = "https://wa.me/6380085050?text=" + message;
+            // UNGA WHATSAPP NUMBER-A KEAZHE IRUKURA '91YOURNUMBER' EDATHULA ADD PANNUNGA:
+            var whatsappUrl = "https://wa.me/916380085050?text=" + message;
             window.open(whatsappUrl, '_blank');
         }
     </script>
